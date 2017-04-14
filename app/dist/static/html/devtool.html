@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DevToolsExtension</title>
+    <link rel="Shortcut Icon" href="/static/img/devtool.png">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+</head>
+
+<body>
+    <div>添加扩展:<input type="text" id="addfile" holdplace="请输入已解压谷歌扩展文件路径"><button id="add" onclick="addExtension()">添加</button></div>
+    <div>删除扩展:<input type="text" id="removefile" holdplace="请输入扩展名"><button id="remove" onclick="removeExtension()">删除</button></div>
+    <div> 扩展列表:</div>
+    <div id="list"></div>
+
+</body>
+<script>
+    var ws = new WebSocket('ws://localhost:8080/');
+    ws.onopen = function () {
+        ws.send(JSON.stringify({ key: 'extension-get' }));
+    };
+    ws.onmessage = function (e) {
+        var data = JSON.parse(e.data);
+        switch (data.key) {
+            case 'extension-get':
+                extensionGet(data.value)
+                break;
+        }
+    }
+    function addExtension() {
+        var src = document.getElementById('addfile').value;
+        if (src) {
+            ws.send(JSON.stringify({ key: 'extension-add', value: src }));
+            setTimeout(function () {
+                ws.send(JSON.stringify({ key: 'extension-get' }));
+            }, 0);
+        }
+    }
+    function removeExtension() {
+        var src = document.getElementById('removefile').value;
+        if (src) {
+            ws.send(JSON.stringify({ key: 'extension-remove', value: src }));
+            setTimeout(function () {
+                ws.send(JSON.stringify({ key: 'extension-get' }));
+            }, 500);
+        }
+    }
+
+    function extensionGet(value) {
+        var list = document.getElementById('list');
+        list.innerText = JSON.stringify(value, null, 2);
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "electron-browser-vue",
+  "version": "0.0.0",
+  "description": "An electron-vue project",
+  "main": "./dist/main.js",
+  "dependencies": {
+    "babel-runtime": "^6.23.0",
+    "vue": "^2.1.10",
+    "vue-electron": "^1.0.6",
+    "vue-resource": "^1.0.3",
+    "vuex": "^2.1.1",
+    "ws": "^2.2.3"
+  },
+  "devDependencies": {},
+  "author": "fastCreator <237625092@qq.com>"
+}

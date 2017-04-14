@@ -1,0 +1,39 @@
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.ttf?t=1492073545972') format('truetype'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-guanbifuzhi:before { content: "\e633"; }
+
+.icon-houtui:before { content: "\e675"; }
+
+.icon-gengduo:before { content: "\e766"; }
+
+.icon-right:before { content: "\e67a"; }
+
+.icon-shoucang2:before { content: "\e642"; }
+
+.icon-suoxiao:before { content: "\e613"; }
+
+.icon-qianjin:before { content: "\e66e"; }
+
+.icon-shoucang1:before { content: "\e72b"; }
+
+.icon-chao:before { content: "\e620"; }
+
+.icon-extend:before { content: "\e60e"; }
+
+.icon-suoxiao1:before { content: "\e651"; }
+
+.icon-favorite:before { content: "\e600"; }
+
+.icon-quanping:before { content: "\e615"; }
+
