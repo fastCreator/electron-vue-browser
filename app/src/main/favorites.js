@@ -1,5 +1,5 @@
 const fs = require('fs');
-const filePath = require('path').join(__dirname, './test.json');
+const filePath = require('path').join(__dirname, '/test.json'); 
 
 function setOne(path, key, value) {
     return new Promise(function (resolve, reject) {
@@ -21,7 +21,7 @@ function setOne(path, key, value) {
 function getAll() {
     return new Promise(function (resolve, reject) {
         fs.readFile(filePath, 'utf8', (err, data) => {
-            if (err) throw (err);
+            if (err) write({});
             resolve(data ? JSON.parse(data) : '');
         });
     });

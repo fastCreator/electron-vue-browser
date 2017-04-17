@@ -68,7 +68,7 @@ const mutations = {
     if (/^http/.test(url)) {
       webview.loadURL(url);
     } else {
-      webview.loadURL('https://' + url);
+      webview.loadURL('http://' + url);
     }
 
   },
@@ -138,7 +138,7 @@ const actions = {
         commit(types.WEBVIEW_FAVICON_FLASH, icon);
     });
     webview.addEventListener('did-fail-load', function (event) { 
-      commit(types.WEBVIEW_LOAD_URL, SEARCHURL+document.getElementById('gourl').value);
+       commit(types.WEBVIEW_LOAD_URL, SEARCHURL+document.getElementById('gourl').value);
     });
   }
 }

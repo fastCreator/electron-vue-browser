@@ -49,6 +49,9 @@ function createWindow() {
   })
   // eslint-disable-next-line no-console
   console.log('mainWindow opened');
+
+  mainWindow.webContents.openDevTools();
+
 }
 
 function creatSocket() {
